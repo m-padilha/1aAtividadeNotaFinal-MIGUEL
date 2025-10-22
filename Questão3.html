@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        body {
+            background: #151b23;
+            color: whitesmoke;
+            font-family: "Inter", 'Roboto', sans-serif;
+            margin: 0 -20px 0 0;
+            transition: background-color 1s;
+        }
+        header {
+            background: black;
+            padding: 1em;
+        }
+        h3 { font-size: 1.33em; color: #b263d6; 
+            transition: color 1s;}
+        .subheader {
+            margin-top: -10px;
+            line-height: 0;
+        }
+        .bloco {
+            background: #151b23;
+            padding: 1em;
+            font-size: 2em;
+            text-align: center;
+            margin: 15px auto;
+            border-radius: 32px;
+            box-shadow: 0 4px 4px hsla(0, 0%, 0%, 0.75), 0 12px 12px hsla(0, 0%, 0%, 0.75);
+            max-width: 750px;
+        }
+        button {
+            margin: 0 4px;
+            padding: 8px 1em;
+            border-radius: 20px;
+            background: #f0f0f0;
+            color: #b263d6;    
+            font-size: 1em;
+            transition: color 1s;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>DESENV. WEB EM HTML5, CSS, JAVASCRIPT E PHP<br>1ª Atividade de Nota Final (NF)</h1></header>
+    <div class="subheader"><hr><br><h2>&nbsp;&nbsp; Questão 3</h2><br><hr></div>
+    <br>
+    <div class="bloco">
+        <h3 id="titulo">Troca de cor do fundo</h3>
+        <button type="button" id="botao" onclick="trocaCor()">Trocar cor</button>
+    </div>
+    <script>
+        const cores = ['red', 'blue', 'green', 'orange', 'purple'];
+
+        function trocaCor() {
+            const corFundo = cores[Math.floor(Math.random() * cores.length)];
+            let corTexto;
+            document.body.style.backgroundColor = corFundo;
+            document.getElementById("titulo").style.color = corFundo;
+            document.getElementById("botao").style.color = corFundo;
+        }
+    </script>
+</body>
+</html>
