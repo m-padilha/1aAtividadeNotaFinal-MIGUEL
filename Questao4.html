@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        body {
+            background: #151b23;
+            color: whitesmoke;
+            font-family: "Inter", 'Roboto', sans-serif;
+            margin: 0 -20px 0 0;
+        }
+        header {
+            background: black;
+            padding: 1em;
+        }
+        h3 { font-size: 1.33em; color: #b263d6; }
+        .subheader {
+            margin-top: -10px;
+            line-height: 0;
+        }
+        form {
+            padding: 1em;
+            font-size: 2em;
+            text-align: center;
+            margin: 15px auto;
+            border-radius: 32px;
+            box-shadow: 0 4px 4px #000, 0 12px 12px #000;
+            max-width: 750px;
+            height: 500px;
+        }
+        button, input {
+            width: 175px;
+            margin: 0 4px 24px 0;
+            padding: 8px 1em;
+            border-radius: 20px;
+            background: #f0f0f0;
+            color: #b263d6;    
+            font-size: 1em;
+        }
+        #resultado {
+            display: none;
+            background: black;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 8px 1em;
+            border-radius: 20px;
+            color: whitesmoke;    
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>DESENV. WEB EM HTML5, CSS, JAVASCRIPT E PHP<br>1ª Atividade de Nota Final (NF)</h1></header>
+    <div class="subheader"><hr><br><h2>&nbsp;&nbsp; Questão 4</h2><br><hr></div>
+    <br>
+    <form>
+        <h3>Calculadora de IMC</h3>
+        <label>Peso (kg)</label><br>
+        <input type="number" id="peso" required><br>
+        <label>Altura (m)</label><br>
+        <input type="number" id="altura" required><br>
+        <button type="button" onclick="imc()">Calcular</button>
+        <p id="resultado"></p>
+    </form>
+    <script>
+        function imc() {
+            let numero1 = parseFloat(document.getElementById("peso").value);
+            let numero2 = parseFloat(document.getElementById("altura").value); 
+            const resultado = document.getElementById("resultado");
+            if (numero1 > 0 && numero2 > 0) {
+            const rimc = numero1 / (numero2 * numero2)
+            resultado.textContent = `Seu IMC é: ${rimc.toFixed(2)}`;
+            resultado.style.display = "block"; 
+             } else {
+                resultado.textContent = "Por favor, insira valores válidos.";
+                resultado.style.display = "block"; 
+            }
+        }
+    </script>
+</body>
+</html>
