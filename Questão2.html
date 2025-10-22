@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <style>
+        body {
+            background: #151b23;
+            color: whitesmoke;
+            font-family: "Inter", 'Roboto', sans-serif;
+            margin: 0 -20px 0 0;
+        }
+        header {
+            background: black;
+            padding: 1em;
+        }
+        h3 { font-size: 1.33em; color: #b263d6; }
+        .subheader {
+            margin-top: -10px;
+            line-height: 0;
+        }
+        form {
+            padding: 1em;
+            font-size: 2em;
+            text-align: center;
+            margin: 15px auto;
+            border-radius: 32px;
+            box-shadow: 0 4px 4px #000, 0 12px 12px #000;
+            max-width: 750px;
+            height: 275px;
+        }
+        button, input {
+            width: 175px;
+            margin: 0 4px;
+            padding: 8px 1em;
+            border-radius: 20px;
+            background: #f0f0f0;
+            color: #b263d6;    
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>DESENV. WEB EM HTML5, CSS, JAVASCRIPT E PHP<br>1ª Atividade de Nota Final (NF)</h1></header>
+    <div class="subheader"><hr><br><h2>&nbsp;&nbsp; Questão 2</h2><br><hr></div>
+    <br>
+    <form>
+        <h3>Soma de dois números</h3>
+        <input type="number" id="num1" required> +
+        <input type="number" id="num2" required>
+        <button type="button" onclick="somar()">Somar</button>
+        <p id="resultado"></p>
+    </form>
+    <script>
+        function somar() {
+            let numero1 = parseFloat(document.getElementById("num1").value);
+            let numero2 = parseFloat(document.getElementById("num2").value); 
+            const resultado = document.getElementById("resultado");
+            const soma = numero1 + numero2;
+            resultado.textContent = `Soma = ${soma}`;
+        }
+    </script>
+</body>
+</html>
